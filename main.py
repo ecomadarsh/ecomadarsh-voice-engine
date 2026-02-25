@@ -7,7 +7,7 @@ import os
 
 app = FastAPI()
 
-SARVAM_KEY = os.getenv("sk_capgtvqz_Jr1z0nm11QaF6nnCtehpPQJL", "")
+SARVAM_KEY = os.getenv("sk_kmkrqgbm_BQUP7MnQOqLyiRzo1utR3E8p", "")
 
 @app.post("/sarvam-stream")
 async def vapi_to_sarvam(request: Request):
