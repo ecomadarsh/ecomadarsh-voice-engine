@@ -59,4 +59,9 @@ async def vapi_to_sarvam(request: Request):
                         # Decode the Base64 chunk and yield the raw audio bytes
                         chunk = base64.b64decode(data["audios"][0])
                         yield chunk
-                except Exception
+                except Exception as e:
+                    print(f"Stream ended or error: {e}")
+                    break
+
+    # Return the live audio pipe back to Vapi
+    return StreamingResponse(stream_audio(), media_type="audio/wav")
